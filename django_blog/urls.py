@@ -20,7 +20,7 @@ from django_blog import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
+    path('', views.IndexView.as_view(), name='index'),
     path('about/', views.about, name='about'),
-    path('articles/', include('django_blog.article.urls', namespace='articles')),
+    path('articles/', include('django_blog.articles.urls', namespace='articles')),
 ]
