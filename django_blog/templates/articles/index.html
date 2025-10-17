@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 
+{% block title %}Статья {{ article_id }}{% endblock %}
+
 {% block content %}
-    <h1>Статьи</h1>
+    <h1>Статья {{ article_id }}</h1>
+    <p>Тэг {{ tag }}</p>
 {% endblock %}
