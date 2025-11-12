@@ -2,12 +2,17 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views import View
 from django.urls import reverse
+from .models import Article
 
 class IndexView(View):
     def get(self, request, *args, **kwargs):
+        articles = Article.objects.all()
         return render(
             request,
             'articles/index.html',
+            context={
+                'articles': articles,
+            },
         )
 
 def index(request, tag, article_id):
