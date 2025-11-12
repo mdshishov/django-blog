@@ -1,3 +1,12 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Article
+
+
+@admin.register(Article)
+class ArticleAdmin(admin.ModelAdmin):
+    list_display = ['name', 'created_at']
+    search_fields = ['name', 'body']
+    list_filter = [
+        ('created_at', admin.DateFieldListFilter),
+    ]
