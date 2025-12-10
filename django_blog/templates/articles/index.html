@@ -4,6 +4,7 @@
 
 {% block content %}
     <h1>Статьи</h1>
+    <a href="{% url 'articles_create' %}">Добавить статью</a>
     {% for article in articles %}
         <a href="{% url 'articles_detail' id=article.id %}"><h2>{{ article.title }}</h2></a>
         <p>{{ article.body|truncatechars:25 }}</p>
