@@ -27,23 +27,3 @@ class ArticleView(View):
                 'article': article,
             }
         )
-
-
-def index(request, tag, article_id):
-    return render(
-        request,
-        'articles/index.html',
-        context={
-            'tag': tag,
-            'article_id': article_id,
-        }
-    )
-
-
-def index_redirect(request):
-    return redirect(
-        reverse(
-            'articles:article_page',
-            kwargs={'tag': 'python', 'article_id': 42}
-        )
-    )
